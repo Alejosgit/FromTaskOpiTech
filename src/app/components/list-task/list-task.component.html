@@ -1,0 +1,23 @@
+<div class="title">
+  <h1>Task List</h1>
+</div>
+<form>
+  <table class="container">
+    <div class="cart"></div>
+    <ng-container>
+      <th>Title</th>
+      <th>State</th>
+      <th>Priority</th>
+      <th>DueDate</th>
+      <th>Details</th>
+    </ng-container>
+    <tr *ngFor="let fact of taskArray()">
+      <td>{{ fact.title }}</td>
+      <td>{{ fact.state }}</td>
+      <td>{{ fact.priority }}</td>
+      <td>{{ fact.dueDate }}</td>
+      <td>{{ fact.detail }}</td>
+      <input type="checkbox" [checked]="fact.State" (change)="editTask(fact)" />
+    </tr>
+  </table>
+</form>

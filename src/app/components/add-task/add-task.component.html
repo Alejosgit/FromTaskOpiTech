@@ -1,0 +1,43 @@
+<div class="title">
+  <h1>Task Add</h1>
+</div>
+
+<div class="container">
+  <form [formGroup]="Group" (ngSubmit)="add(Group.value)">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" formControlName="title" required />
+    </div>
+    <div>
+      <label>State:</label>
+      <select name="state" id="state" formControlName="state">
+        <option value="0">Pending</option>
+        <option value="1">Completed</option>
+      </select>
+    </div>
+    <div>
+      <label>Priority:</label>
+      <select name="Priority" id="Priority" formControlName="priority">
+        <option value="0">High</option>
+        <option value="1">Half</option>
+        <option value="2">Low</option>
+      </select>
+    </div>
+    <div>
+      <label>DueDate</label>
+      <input type="date" formControlName="dueDate" />
+    </div>
+    <div>
+      <label for="detail">Detail:</label>
+      <textarea
+        name="Detail"
+        cols="32"
+        rows="5"
+        formControlName="detail"
+      ></textarea>
+    </div>
+    <div>
+      <button type="submit">Add Task</button>
+    </div>
+  </form>
+</div>
